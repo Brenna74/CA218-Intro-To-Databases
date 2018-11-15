@@ -25,7 +25,7 @@ WHERE quantityInStock > "5000" AND MSRP > buyPrice*2
 ORDER BY productName;
 #From payments table, list customers who spent more than 30000 in total,
 #order the result by thetotal amount from highest to lowest.
-SELECT customerNumber, ROUND(SUM(amount),2) 
+SELECT customerNumber 
 FROM payments 
 GROUP BY customerNumber 
 HAVING (ROUND(SUM(amount),2)) > 30000 
