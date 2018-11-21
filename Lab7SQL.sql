@@ -18,7 +18,8 @@
 #15 Marks
 SELECT p.productName,p.productVendor,o.quantity 
 FROM products p, (SELECT productCode, SUM(quantityOrdered) AS quantity FROM orderdetails GROUP BY productCode) o 
-WHERE p.productCode = o.productCode;
+WHERE p.productCode = o.productCode
+ORDER BY quantity DESC;
 
 #d) 
 #Repeat query c) but only where the amount of units exceeds 1000. 
